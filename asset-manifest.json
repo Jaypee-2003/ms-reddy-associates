@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/Jaypee-2003/ms-reddy-associates/static/css/main.e6c13ad2.css",
+    "main.js": "/Jaypee-2003/ms-reddy-associates/static/js/main.b8b83f46.js",
+    "static/js/453.73a46124.chunk.js": "/Jaypee-2003/ms-reddy-associates/static/js/453.73a46124.chunk.js",
+    "static/media/logo.png": "/Jaypee-2003/ms-reddy-associates/static/media/logo.0450d263b3a9deaf1ed0.png",
+    "index.html": "/Jaypee-2003/ms-reddy-associates/index.html",
+    "main.e6c13ad2.css.map": "/Jaypee-2003/ms-reddy-associates/static/css/main.e6c13ad2.css.map",
+    "main.b8b83f46.js.map": "/Jaypee-2003/ms-reddy-associates/static/js/main.b8b83f46.js.map",
+    "453.73a46124.chunk.js.map": "/Jaypee-2003/ms-reddy-associates/static/js/453.73a46124.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e6c13ad2.css",
+    "static/js/main.b8b83f46.js"
+  ]
+}
