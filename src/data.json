@@ -1,0 +1,179 @@
+{
+    "India": {
+      "Andhra Pradesh": {
+        "districts": {
+          "Anantapur": ["Anantapur", "Guntakal", "Hindupur"],
+          "Chittoor": ["Chittoor", "Tirupati", "Madanapalle"]
+        }
+      },
+      "Arunachal Pradesh": {
+        "districts": {
+          "Papum Pare": ["Itanagar", "Naharlagun"],
+          "Tawang": ["Tawang"]
+        }
+      },
+      "Assam": {
+        "districts": {
+          "Kamrup Metropolitan": ["Guwahati East", "Guwahati West"],
+          "Dibrugarh": ["Dibrugarh", "Tinsukia"]
+        }
+      },
+      "Bihar": {
+        "districts": {
+          "Patna": ["Patna Sahib", "Fatuha"],
+          "Gaya": ["Bodh Gaya", "Gaya Town"]
+        }
+      },
+      "Chhattisgarh": {
+        "districts": {
+          "Raipur": ["Raipur City", "Abhanpur"],
+          "Durg": ["Bhilai", "Durg Rural"]
+        }
+      },
+      "Delhi": {
+        "districts": {
+          "Central Delhi": ["Chandni Chowk", "Karol Bagh"],
+          "South Delhi": ["Kalkaji", "Mehrauli"]
+        }
+      },
+      "Goa": {
+        "districts": {
+          "North Goa": ["Panaji", "Mapusa"],
+          "South Goa": ["Margao", "Vasco"]
+        }
+      },
+      "Gujarat": {
+        "districts": {
+          "Ahmedabad": ["Maninagar", "Ellis Bridge"],
+          "Surat": ["Katargam", "Varachha"]
+        }
+      },
+      "Haryana": {
+        "districts": {
+          "Gurugram": ["Gurgaon", "Sohna"],
+          "Faridabad": ["Ballabgarh", "Faridabad"]
+        }
+      },
+      "Himachal Pradesh": {
+        "districts": {
+          "Shimla": ["Shimla Urban", "Rampur"],
+          "Kangra": ["Dharamshala", "Palampur"]
+        }
+      },
+      "Jharkhand": {
+        "districts": {
+          "Ranchi": ["Ranchi", "Kanke"],
+          "Dhanbad": ["Dhanbad", "Jharia"]
+        }
+      },
+      "Karnataka": {
+        "districts": {
+          "Bangalore Urban": ["Bangalore Central", "Bangalore South"],
+          "Mysore": ["Mysore", "Nanjangud"]
+        }
+      },
+      "Kerala": {
+        "districts": {
+          "Thiruvananthapuram": ["Kazhakootam", "Varkala"],
+          "Ernakulam": ["Kochi", "Aluva"]
+        }
+      },
+      "Madhya Pradesh": {
+        "districts": {
+          "Bhopal": ["Bhopal North", "Bhopal South"],
+          "Indore": ["Indore-1", "Indore-2"]
+        }
+      },
+      "Maharashtra": {
+        "districts": {
+          "Mumbai": ["Colaba", "Bandra"],
+          "Pune": ["Shivajinagar", "Hadapsar"]
+        }
+      },
+      "Manipur": {
+        "districts": {
+          "Imphal West": ["Imphal", "Wangoi"],
+          "Churachandpur": ["Churachandpur"]
+        }
+      },
+      "Meghalaya": {
+        "districts": {
+          "East Khasi Hills": ["Shillong", "Mawlai"],
+          "West Garo Hills": ["Tura", "Rongram"]
+        }
+      },
+      "Mizoram": {
+        "districts": {
+          "Aizawl": ["Aizawl East", "Aizawl West"],
+          "Lunglei": ["Lunglei"]
+        }
+      },
+      "Nagaland": {
+        "districts": {
+          "Kohima": ["Kohima", "Tseminyu"],
+          "Dimapur": ["Dimapur", "Chümoukedima"]
+        }
+      },
+      "Odisha": {
+        "districts": {
+          "Bhubaneswar": ["Bhubaneswar North", "Bhubaneswar Central"],
+          "Cuttack": ["Cuttack", "Banki"]
+        }
+      },
+      "Punjab": {
+        "districts": {
+          "Ludhiana": ["Ludhiana East", "Ludhiana West"],
+          "Amritsar": ["Amritsar North", "Amritsar South"]
+        }
+      },
+      "Rajasthan": {
+        "districts": {
+          "Jaipur": ["Jaipur Rural", "Jaipur Urban"],
+          "Udaipur": ["Udaipur City", "Salumbar"]
+        }
+      },
+      "Sikkim": {
+        "districts": {
+          "East Sikkim": ["Gangtok"],
+          "West Sikkim": ["Gyalshing"]
+        }
+      },
+      "Tamil Nadu": {
+        "districts": {
+          "Chennai": ["Anna Nagar", "Teynampet"],
+          "Coimbatore": ["Coimbatore North", "Coimbatore South"]
+        }
+      },
+      "Telangana": {
+        "districts": {
+          "Hyderabad": ["Secunderabad", "Charminar"],
+          "Warangal": ["Warangal East", "Warangal West"]
+        }
+      },
+      "Tripura": {
+        "districts": {
+          "West Tripura": ["Agartala"],
+          "South Tripura": ["Belonia"]
+        }
+      },
+      "Uttar Pradesh": {
+        "districts": {
+          "Lucknow": ["Lucknow East", "Lucknow West"],
+          "Varanasi": ["Varanasi North", "Varanasi South"]
+        }
+      },
+      "Uttarakhand": {
+        "districts": {
+          "Dehradun": ["Dehradun Cantonment", "Mussoorie"],
+          "Nainital": ["Nainital", "Haldwani"]
+        }
+      },
+      "West Bengal": {
+        "districts": {
+          "Kolkata": ["Bhowanipore", "Shyambazar"],
+          "Darjeeling": ["Darjeeling", "Kurseong"]
+        }
+      }
+    }
+  }
+  

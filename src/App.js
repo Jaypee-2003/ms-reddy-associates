@@ -1,25 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Services from "./pages/Services";
+import Contact from "./pages/Contact";
+import Terms from "./pages/Terms";
+import ApplyFranchise from "./pages/ApplyFranchise";
+import ApplyAgent from "./pages/ApplyAgent";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Navbar />
+      <div style={styles.mainContainer}>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/ms-reddy-associates/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/services" element={<Services />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/terms" element={<Terms />} />
+          <Route path="/apply-franchise" element={<ApplyFranchise />} />
+          <Route path="/apply-agent" element={<ApplyAgent />} />
+        </Routes>
+      </div>
+      <Footer />
+    </Router>
   );
 }
+
+const styles = {
+  mainContainer: {
+    marginTop: "80px", // Adjust according to the navbar height
+    minHeight: "calc(100vh - 160px)", // Adjust height considering navbar and footer
+  },
+};
 
 export default App;
