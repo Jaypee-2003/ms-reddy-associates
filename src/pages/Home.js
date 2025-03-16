@@ -9,39 +9,53 @@ const Home = () => {
       <motion.div 
         initial={{ opacity: 0, y: -50 }} 
         animate={{ opacity: 1, y: 0 }} 
-        transition={{ duration: 0.8 }} 
+        transition={{ duration: 0.8, ease: "easeOut" }} 
+        whileHover={{ scale: 1.02 }}
         style={styles.hero}
       >
         <h1 style={styles.heroTitle}>
-          <TypeAnimation
-            sequence={[
-              "Over 10,000+ Happy Clients", 2000,
-              "95% Loan Approval Rate", 2000,
-              "Trusted by Thousands for Secure Loans", 2000
-            ]}
-            wrapper="span"
-            speed={50}
-            repeat={Infinity}
-          />
+        <TypeAnimation
+  sequence={[
+    "Over 10,000+ Happy Clients", 2000,
+    "95% Loan Approval Rate", 2000,
+    "Trusted by Thousands for Secure Loans", 2000
+  ]}
+  wrapper="span"
+  speed={50}
+  repeat={Infinity}
+/>
+
         </h1>
         <p style={styles.heroSubtitle}>Quick and secure loans with Ms Reddy Associates. Trusted by over 10,000+ satisfied clients.</p>
-        <motion.button whileHover={{ scale: 1.1 }} style={styles.button}>
+        <motion.button 
+          whileHover={{ scale: 1.1, rotate: 3 }}
+          whileTap={{ scale: 0.95 }}
+          style={styles.button}
+        >
           Apply Now
         </motion.button>
       </motion.div>
 
       {/* Why Choose Us Section */}
       <motion.div 
-        initial={{ opacity: 0 }} 
-        animate={{ opacity: 1 }} 
-        transition={{ duration: 1 }} 
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1, ease: "easeOut" }}
+        viewport={{ once: true }}
         style={styles.section}
       >
         <h2 style={styles.sectionTitle}>Why Choose Us?</h2>
         <p style={styles.sectionSubtitle}>We have processed over ₹500 Cr in loans with a 95% approval rate.</p>
         <div style={styles.grid}>
           {["Quick Approvals", "Low Interest Rates", "No Hidden Fees", "Flexible Repayments"].map((benefit, index) => (
-            <motion.div key={index} whileHover={{ scale: 1.05 }} style={styles.card}>
+            <motion.div 
+              key={index} 
+              whileHover={{ scale: 1.1, rotate: 2 }}
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{ duration: 0.5, delay: index * 0.2 }}
+              style={styles.card}
+            >
               ✅ {benefit}
             </motion.div>
           ))}
@@ -50,16 +64,24 @@ const Home = () => {
 
       {/* Loan Categories */}
       <motion.div 
-        initial={{ opacity: 0 }} 
-        animate={{ opacity: 1 }} 
-        transition={{ duration: 1.2 }} 
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1.2, ease: "easeOut" }}
+        viewport={{ once: true }}
         style={styles.section}
       >
         <h2 style={styles.sectionTitle}>Our Loan Services</h2>
         <p style={styles.sectionSubtitle}>We offer personalized loans with flexible terms.</p>
         <div style={styles.grid}>
           {["🏡 Home Loan", "🚗 Vehicle Loan", "📚 Education Loan", "🏢 Business Loan"].map((item, index) => (
-            <motion.div key={index} whileHover={{ scale: 1.05 }} style={styles.card}>
+            <motion.div 
+              key={index} 
+              whileHover={{ scale: 1.1, rotate: -2 }}
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: index * 0.2 }}
+              style={styles.card}
+            >
               <h3>{item}</h3>
               <p>
                 {index === 0 ? "Up to ₹1 Cr for your dream home." :
@@ -73,20 +95,27 @@ const Home = () => {
 
       {/* Testimonials Section */}
       <motion.div 
-        initial={{ opacity: 0 }} 
-        animate={{ opacity: 1 }} 
-        transition={{ duration: 1.5 }} 
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1.5, ease: "easeOut" }}
+        viewport={{ once: true }}
         style={styles.section}
       >
         <h2 style={styles.sectionTitle}>What Our Clients Say</h2>
         <p style={styles.sectionSubtitle}>Join thousands of happy customers!</p>
         <div style={styles.grid}>
-          {[
-            { name: "Rahul S.", review: "Got my home loan approved in 3 days!" },
+          {[{ name: "Rahul S.", review: "Got my home loan approved in 3 days!" },
             { name: "Priya K.", review: "Lowest interest rates and great support!" },
-            { name: "Amit R.", review: "Flexible repayments helped my business grow!" }
-          ].map((testimonial, index) => (
-            <motion.div key={index} whileHover={{ scale: 1.05 }} style={styles.card}>
+            { name: "Amit R.", review: "Flexible repayments helped my business grow!" }]
+            .map((testimonial, index) => (
+            <motion.div 
+              key={index} 
+              whileHover={{ scale: 1.1, rotate: 2 }}
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5, delay: index * 0.2 }}
+              style={styles.card}
+            >
               <h3>⭐ {testimonial.name}</h3>
               <p>"{testimonial.review}"</p>
             </motion.div>
@@ -96,8 +125,6 @@ const Home = () => {
     </div>
   );
 };
-
-// Styles Object
 const styles = {
   container: {
     textAlign: "center",
