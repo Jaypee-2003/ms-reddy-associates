@@ -24,25 +24,16 @@ const CustomNavbar = () => {
 
   return (
     <>
-      {/* Main Navbar */}
+      {/* Floating Navbar */}
       <Navbar
         expand="lg"
         fixed="top"
-        style={{
-          background: "rgba(30, 58, 138, 0.9)",
-          backdropFilter: "blur(10px)",
-          padding: "10px 20px",
-          transition: "background 0.3s ease",
-        }}
+        className="floating-navbar"
       >
         <Container>
           {/* Logo */}
           <Navbar.Brand as={Link} to="/">
-            <img
-              src={logo}
-              alt="Logo"
-              style={{ height: "50px", transition: "transform 0.3s ease" }}
-            />
+            <img src={logo} alt="Logo" className="logo" />
           </Navbar.Brand>
 
           {/* Mobile Toggle Button */}
@@ -51,28 +42,28 @@ const CustomNavbar = () => {
             onClick={() => setShowMobileMenu(!showMobileMenu)}
             className="navbar-toggler"
           >
-            <FaBars style={{ color: "white", fontSize: "24px" }} />
+            <FaBars className="menu-icon" />
           </Navbar.Toggle>
 
           {/* Desktop Navbar */}
           <Navbar.Collapse id="navbar-nav" className="d-none d-lg-flex">
             <Nav className="ms-auto">
-              <Nav.Link as={Link} to="/" style={navLinkStyle}>
+              <Nav.Link as={Link} to="/" className="nav-link-custom">
                 Home
               </Nav.Link>
-              <Nav.Link as={Link} to="/about" style={navLinkStyle}>
+              <Nav.Link as={Link} to="/about" className="nav-link-custom">
                 About
               </Nav.Link>
-              <Nav.Link as={Link} to="/services" style={navLinkStyle}>
+              <Nav.Link as={Link} to="/services" className="nav-link-custom">
                 Services
               </Nav.Link>
-              <Nav.Link as={Link} to="/apply-franchise" style={navLinkStyle}>
+              <Nav.Link as={Link} to="/apply-franchise" className="nav-link-custom">
                 Apply Franchise
               </Nav.Link>
-              <Nav.Link as={Link} to="/apply-agent" style={navLinkStyle}>
+              <Nav.Link as={Link} to="/apply-agent" className="nav-link-custom">
                 Apply Agent
               </Nav.Link>
-              <Nav.Link as={Link} to="/contact" style={navLinkStyle}>
+              <Nav.Link as={Link} to="/contact" className="nav-link-custom">
                 Contact
               </Nav.Link>
             </Nav>
@@ -90,52 +81,87 @@ const CustomNavbar = () => {
       >
         <Offcanvas.Header closeButton>
           <Offcanvas.Title>
-            <img src={logo} alt="Logo" style={{ height: "40px" }} />
+            <img src={logo} alt="Logo" className="logo" />
           </Offcanvas.Title>
         </Offcanvas.Header>
         <Offcanvas.Body>
           <Nav className="flex-column">
-            <Nav.Link as={Link} to="/" onClick={() => setShowMobileMenu(false)} style={mobileNavLink}>
+            <Nav.Link as={Link} to="/" onClick={() => setShowMobileMenu(false)} className="mobile-nav-link">
               Home
             </Nav.Link>
-            <Nav.Link as={Link} to="/about" onClick={() => setShowMobileMenu(false)} style={mobileNavLink}>
+            <Nav.Link as={Link} to="/about" onClick={() => setShowMobileMenu(false)} className="mobile-nav-link">
               About
             </Nav.Link>
-            <Nav.Link as={Link} to="/services" onClick={() => setShowMobileMenu(false)} style={mobileNavLink}>
+            <Nav.Link as={Link} to="/services" onClick={() => setShowMobileMenu(false)} className="mobile-nav-link">
               Services
             </Nav.Link>
-            <Nav.Link as={Link} to="/apply-franchise" onClick={() => setShowMobileMenu(false)} style={mobileNavLink}>
+            <Nav.Link as={Link} to="/apply-franchise" onClick={() => setShowMobileMenu(false)} className="mobile-nav-link">
               Apply Franchise
             </Nav.Link>
-            <Nav.Link as={Link} to="/apply-agent" onClick={() => setShowMobileMenu(false)} style={mobileNavLink}>
+            <Nav.Link as={Link} to="/apply-agent" onClick={() => setShowMobileMenu(false)} className="mobile-nav-link">
               Apply Agent
             </Nav.Link>
-            <Nav.Link as={Link} to="/contact" onClick={() => setShowMobileMenu(false)} style={mobileNavLink}>
+            <Nav.Link as={Link} to="/contact" onClick={() => setShowMobileMenu(false)} className="mobile-nav-link">
               Contact
             </Nav.Link>
           </Nav>
         </Offcanvas.Body>
       </Offcanvas>
+
+      {/* Styles */}
+      <style jsx>{`
+        .floating-navbar {
+          background: white;
+          backdrop-filter: blur(10px);
+          box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+          padding: 10px 20px;
+          border-radius: 10px;
+          position: fixed;
+          top: 10px;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 90%;
+          max-width: 1200px;
+          transition: all 0.3s ease-in-out;
+        }
+
+        .logo {
+          height: 50px;
+          transition: transform 0.3s ease;
+        }
+
+        .menu-icon {
+          color: black;
+          font-size: 24px;
+        }
+
+        .nav-link-custom {
+          color: black;
+          font-size: 16px;
+          font-weight: 500;
+          text-decoration: none;
+          transition: color 0.3s ease, transform 0.2s ease;
+          margin-right: 15px;
+        }
+        .nav-link-custom:hover {
+          color: #1e3a8a;
+          transform: scale(1.1);
+        }
+
+        .mobile-nav-link {
+          font-size: 18px;
+          font-weight: 500;
+          border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+          text-decoration: none;
+          color: black;
+          padding: 10px 0;
+        }
+        .mobile-nav-link:hover {
+          color: #1e3a8a;
+        }
+      `}</style>
     </>
   );
-};
-
-// ✅ Navbar Link Styles
-const navLinkStyle = {
-  color: "white",
-  fontSize: "16px",
-  fontWeight: 500,
-  textDecoration: "none",
-  transition: "color 0.3s ease",
-  marginRight: "15px",
-};
-
-// ✅ Mobile Navbar Styles
-const mobileNavLink = {
-  fontSize: "18px",
-  fontWeight: "500",
-  borderBottom: "1px solid rgba(255, 255, 255, 0.1)",
-  textDecoration: "none",
 };
 
 export default CustomNavbar;

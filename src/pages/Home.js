@@ -2,191 +2,188 @@ import React from "react";
 import { motion } from "framer-motion";
 import { TypeAnimation } from "react-type-animation";
 
+const sections = [
+  {
+    id: "hero",
+    title: "",
+    subtitle: "Quick and secure loans with Ms Reddy Associates. Trusted by over 10,000+ satisfied clients.",
+    buttonText: "Apply Now",
+  },
+  {
+    id: "why-choose-us",
+    title: "Why Choose Us?",
+    subtitle: "We have processed over ₹500 Cr in loans with a 95% approval rate.",
+    items: [
+      { icon: "✅", text: "Quick Approvals" },
+      { icon: "💰", text: "Low Interest Rates" },
+      { icon: "📜", text: "No Hidden Fees" },
+      { icon: "🔄", text: "Flexible Repayments" },
+      { icon: "👨‍💼", text: "Expert Advisors" },
+      { icon: "📊", text: "Transparent Policies" },
+    ],
+  },
+  {
+    id: "services",
+    title: "Our Loan Services",
+    subtitle: "We offer personalized loans with flexible terms.",
+    items: [
+      { name: "🏡 Home Loan", description: "Up to ₹1 Cr for your dream home." },
+      { name: "🚗 Vehicle Loan", description: "Finance up to 90% of your vehicle." },
+      { name: "📚 Education Loan", description: "Education funding with low interest." },
+      { name: "🏢 Business Loan", description: "Loans up to ₹50 Lakhs for businesses." },
+      { name: "💳 Personal Loan", description: "Flexible amounts, easy EMIs." },
+      { name: "💼 Startup Loan", description: "Helping startups with capital needs." },
+    ],
+  },
+  {
+    id: "testimonials",
+    title: "What Our Clients Say",
+    subtitle: "Join thousands of happy customers!",
+    items: [
+      { name: "Rahul S.", review: "Got my home loan approved in 3 days!" },
+      { name: "Priya K.", review: "Lowest interest rates and great support!" },
+      { name: "Amit R.", review: "Flexible repayments helped my business grow!" },
+      { name: "Sneha D.", review: "No hidden fees. 100% transparent process!" },
+      { name: "Vikas M.", review: "Best loan service I have used so far." },
+    ],
+  },
+];
+
 const Home = () => {
   return (
     <div style={styles.container}>
-      {/* Hero Section */}
-      <motion.div 
-        initial={{ opacity: 0, y: -50 }} 
-        animate={{ opacity: 1, y: 0 }} 
-        transition={{ duration: 0.8, ease: "easeOut" }} 
-        whileHover={{ scale: 1.02 }}
-        style={styles.hero}
-      >
-        <h1 style={styles.heroTitle}>
-        <TypeAnimation
-  sequence={[
-    "Over 10,000+ Happy Clients", 2000,
-    "95% Loan Approval Rate", 2000,
-    "Trusted by Thousands for Secure Loans", 2000
-  ]}
-  wrapper="span"
-  speed={50}
-  repeat={Infinity}
-/>
-
-        </h1>
-        <p style={styles.heroSubtitle}>Quick and secure loans with Ms Reddy Associates. Trusted by over 10,000+ satisfied clients.</p>
-        <motion.button 
-          whileHover={{ scale: 1.1, rotate: 3 }}
-          whileTap={{ scale: 0.95 }}
-          style={styles.button}
+      {sections.map((section) => (
+        <motion.section
+          key={section.id}
+          id={section.id}
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, ease: "easeOut" }}
+          viewport={{ once: true }}
+          style={styles.section}
         >
-          Apply Now
-        </motion.button>
-      </motion.div>
+          {section.id === "hero" ? (
+            <h1 style={styles.animatedText}>
+              <TypeAnimation
+                sequence={[
+                  "Fast & Secure Loans", 2000,
+                  "95% Loan Approval Rate", 2000,
+                  "Trusted by Thousands", 2000,
+                ]}
+                speed={50}
+                repeat={Infinity}
+              />
+            </h1>
+          ) : (
+            <h1 style={styles.title}>{section.title}</h1>
+          )}
+          <p style={styles.subtitle}>{section.subtitle}</p>
 
-      {/* Why Choose Us Section */}
-      <motion.div 
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1, ease: "easeOut" }}
-        viewport={{ once: true }}
-        style={styles.section}
-      >
-        <h2 style={styles.sectionTitle}>Why Choose Us?</h2>
-        <p style={styles.sectionSubtitle}>We have processed over ₹500 Cr in loans with a 95% approval rate.</p>
-        <div style={styles.grid}>
-          {["Quick Approvals", "Low Interest Rates", "No Hidden Fees", "Flexible Repayments"].map((benefit, index) => (
-            <motion.div 
-              key={index} 
-              whileHover={{ scale: 1.1, rotate: 2 }}
-              initial={{ scale: 0.8, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              transition={{ duration: 0.5, delay: index * 0.2 }}
-              style={styles.card}
-            >
-              ✅ {benefit}
-            </motion.div>
-          ))}
-        </div>
-      </motion.div>
+          {section.items && (
+            <div style={styles.grid}>
+              {section.items.map((item, i) => (
+                <motion.div
+                  key={i}
+                  whileHover={{ scale: 1.05 }}
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: i * 0.1 }}
+                  style={{ ...styles.card, ...styles[section.id] }}
+                >
+                  <h3 style={styles.cardTitle}>
+                    {item.icon ? `${item.icon} ${item.text}` : item.name}
+                  </h3>
+                  <p style={styles.cardDescription}>{item.description || item.review || null}</p>
+                </motion.div>
+              ))}
+            </div>
+          )}
 
-      {/* Loan Categories */}
-      <motion.div 
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1.2, ease: "easeOut" }}
-        viewport={{ once: true }}
-        style={styles.section}
-      >
-        <h2 style={styles.sectionTitle}>Our Loan Services</h2>
-        <p style={styles.sectionSubtitle}>We offer personalized loans with flexible terms.</p>
-        <div style={styles.grid}>
-          {["🏡 Home Loan", "🚗 Vehicle Loan", "📚 Education Loan", "🏢 Business Loan"].map((item, index) => (
-            <motion.div 
-              key={index} 
-              whileHover={{ scale: 1.1, rotate: -2 }}
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.2 }}
-              style={styles.card}
+          {section.buttonText && (
+            <motion.button
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.95 }}
+              style={styles.button}
             >
-              <h3>{item}</h3>
-              <p>
-                {index === 0 ? "Up to ₹1 Cr for your dream home." :
-                 index === 1 ? "Finance up to 90% of your vehicle." :
-                 index === 2 ? "Education funding with low interest." : "Loans up to ₹50 Lakhs for businesses."}
-              </p>
-            </motion.div>
-          ))}
-        </div>
-      </motion.div>
-
-      {/* Testimonials Section */}
-      <motion.div 
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1.5, ease: "easeOut" }}
-        viewport={{ once: true }}
-        style={styles.section}
-      >
-        <h2 style={styles.sectionTitle}>What Our Clients Say</h2>
-        <p style={styles.sectionSubtitle}>Join thousands of happy customers!</p>
-        <div style={styles.grid}>
-          {[{ name: "Rahul S.", review: "Got my home loan approved in 3 days!" },
-            { name: "Priya K.", review: "Lowest interest rates and great support!" },
-            { name: "Amit R.", review: "Flexible repayments helped my business grow!" }]
-            .map((testimonial, index) => (
-            <motion.div 
-              key={index} 
-              whileHover={{ scale: 1.1, rotate: 2 }}
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5, delay: index * 0.2 }}
-              style={styles.card}
-            >
-              <h3>⭐ {testimonial.name}</h3>
-              <p>"{testimonial.review}"</p>
-            </motion.div>
-          ))}
-        </div>
-      </motion.div>
+              {section.buttonText}
+            </motion.button>
+          )}
+        </motion.section>
+      ))}
     </div>
   );
 };
+
 const styles = {
   container: {
     textAlign: "center",
-    padding: "50px",
-    color: "#ffffff",
-    backgroundColor: "#0a192f",
+    color: "#333",
+    scrollBehavior: "smooth",
+  },
+  section: {
     minHeight: "100vh",
     display: "flex",
     flexDirection: "column",
-    gap: "50px"
+    justifyContent: "center",
+    alignItems: "center",
+    padding: "50px 20px",
+    borderBottom: "1px solid #ddd",
   },
-  hero: {
-    marginBottom: "50px",
-  },
-  heroTitle: {
+  title: {
     fontSize: "2.5rem",
     fontWeight: "bold",
-    color: "#64ffda",
+    color: "#0056b3",
   },
-  heroSubtitle: {
-    fontSize: "1.2rem",
+  subtitle: {
+    fontSize: "1.4rem",
     marginTop: "10px",
-    color: "#ccd6f6"
+    color: "#444",
+    maxWidth: "800px",
   },
-  button: {
-    padding: "12px 24px",
-    marginTop: "20px",
-    border: "none",
-    borderRadius: "5px",
-    backgroundColor: "#64ffda",
-    color: "#0a192f",
-    fontSize: "1rem",
-    cursor: "pointer",
-  },
-  section: {
-    padding: "40px",
-    width: "80%",
-    margin: "auto",
-  },
-  sectionTitle: {
-    fontSize: "2rem",
-    marginBottom: "10px",
-    color: "#64ffda",
-  },
-  sectionSubtitle: {
-    fontSize: "1.1rem",
-    marginBottom: "20px",
-    color: "#ccd6f6",
+  animatedText: {
+    fontSize: "3rem",
+    fontWeight: "bold",
+    color: "#0056b3",
+    marginTop: "10px",
   },
   grid: {
     display: "grid",
-    gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
-    gap: "20px",
-    justifyContent: "center",
+    gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
+    gap: "30px",
+    width: "100%",
+    maxWidth: "1200px",
+    marginTop: "30px",
   },
   card: {
-    padding: "20px",
-    backgroundColor: "#112240",
-    borderRadius: "8px",
-    fontSize: "1.1rem",
-    color: "#ffffff",
-    boxShadow: "0px 4px 10px rgba(100, 255, 218, 0.2)",
+    padding: "25px",
+    borderRadius: "12px",
+    textAlign: "center",
+    minHeight: "180px",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    transition: "transform 0.3s ease, box-shadow 0.3s ease",
+  },
+  "why-choose-us": {
+    backgroundColor: "#f9f9f9",
+    boxShadow: "0px 5px 15px rgba(0, 0, 0, 0.1)",
+  },
+  services: {
+    backgroundColor: "#eef7ff",
+    boxShadow: "0px 5px 15px rgba(0, 0, 0, 0.15)",
+  },
+  testimonials: {
+    backgroundColor: "#fff3e6",
+    boxShadow: "0px 5px 15px rgba(0, 0, 0, 0.2)",
+  },
+  button: {
+    padding: "12px 24px",
+    marginTop: "30px",
+    borderRadius: "6px",
+    backgroundColor: "#0056b3",
+    color: "#fff",
+    fontSize: "1rem",
+    cursor: "pointer",
   },
 };
 
