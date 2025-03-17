@@ -39,49 +39,41 @@ const ApplyAgent = () => {
       <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1 }} style={styles.card}>
         <h2 style={styles.heading}>Apply as an Agent</h2>
         <form onSubmit={handleSubmit} style={styles.form}>
-          <div style={styles.row}>
-            <select name="state" value={formData.state} onChange={handleChange} style={styles.select}>
-              <option value="">Choose State</option>
-              {states.map((state) => (
-                <option key={state} value={state}>{state}</option>
-              ))}
-            </select>
-            <select name="district" value={formData.district} onChange={handleChange} style={styles.select} disabled={!formData.state}>
-              <option value="">Choose District</option>
-              {districts.map((district) => (
-                <option key={district} value={district}>{district}</option>
-              ))}
-            </select>
-          </div>
-          <div style={styles.row}>
-            <select name="constituency" value={formData.constituency} onChange={handleChange} style={styles.select} disabled={!formData.district}>
-              <option value="">Choose Constituency</option>
-              {constituencies.map((constituency) => (
-                <option key={constituency} value={constituency}>{constituency}</option>
-              ))}
-            </select>
-            <input type="text" name="name" value={formData.name} onChange={handleChange} style={styles.input} placeholder="Full Name" required />
-          </div>
-          <div style={styles.row}>
-            <input type="tel" name="phone" value={formData.phone} onChange={handleChange} style={styles.input} placeholder="Phone Number" required />
-            <input type="tel" name="whatsapp" value={formData.whatsapp} onChange={handleChange} style={styles.input} placeholder="WhatsApp Number" required />
-          </div>
-          <div style={styles.row}>
-            <select name="education" value={formData.education} onChange={handleChange} style={styles.select}>
-              <option value="">Choose Qualification</option>
-              <option value="High School">High School</option>
-              <option value="Diploma">Diploma</option>
-              <option value="Graduate">Graduate</option>
-              <option value="Post Graduate">Post Graduate</option>
-            </select>
-            <select name="experience" value={formData.experience} onChange={handleChange} style={styles.select}>
-              <option value="">Choose Experience</option>
-              <option value="0-1 year">0-1 year</option>
-              <option value="1-3 years">1-3 years</option>
-              <option value="3-5 years">3-5 years</option>
-              <option value="5+ years">5+ years</option>
-            </select>
-          </div>
+          <select name="state" value={formData.state} onChange={handleChange} style={styles.select}>
+            <option value="">Choose State</option>
+            {states.map((state) => (
+              <option key={state} value={state}>{state}</option>
+            ))}
+          </select>
+          <select name="district" value={formData.district} onChange={handleChange} style={styles.select} disabled={!formData.state}>
+            <option value="">Choose District</option>
+            {districts.map((district) => (
+              <option key={district} value={district}>{district}</option>
+            ))}
+          </select>
+          <select name="constituency" value={formData.constituency} onChange={handleChange} style={styles.select} disabled={!formData.district}>
+            <option value="">Choose Constituency</option>
+            {constituencies.map((constituency) => (
+              <option key={constituency} value={constituency}>{constituency}</option>
+            ))}
+          </select>
+          <input type="text" name="name" value={formData.name} onChange={handleChange} style={styles.input} placeholder="Full Name" required />
+          <input type="tel" name="phone" value={formData.phone} onChange={handleChange} style={styles.input} placeholder="Phone Number" required />
+          <input type="tel" name="whatsapp" value={formData.whatsapp} onChange={handleChange} style={styles.input} placeholder="WhatsApp Number" required />
+          <select name="education" value={formData.education} onChange={handleChange} style={styles.select}>
+            <option value="">Choose Qualification</option>
+            <option value="High School">High School</option>
+            <option value="Diploma">Diploma</option>
+            <option value="Graduate">Graduate</option>
+            <option value="Post Graduate">Post Graduate</option>
+          </select>
+          <select name="experience" value={formData.experience} onChange={handleChange} style={styles.select}>
+            <option value="">Choose Experience</option>
+            <option value="0-1 year">0-1 year</option>
+            <option value="1-3 years">1-3 years</option>
+            <option value="3-5 years">3-5 years</option>
+            <option value="5+ years">5+ years</option>
+          </select>
           <button type="submit" style={styles.button}>Submit</button>
         </form>
       </motion.div>
@@ -99,7 +91,7 @@ const styles = {
     padding: "20px",
   },
   card: {
-    maxWidth: "600px",
+    maxWidth: "400px",
     width: "100%",
     backdropFilter: "blur(10px)",
     background: "rgba(0, 0, 0, 0.1)",
@@ -120,13 +112,8 @@ const styles = {
     flexDirection: "column",
     gap: "15px",
   },
-  row: {
-    display: "flex",
-    justifyContent: "space-between",
-    gap: "10px",
-  },
   select: {
-    flex: 1,
+    width: "100%",
     padding: "10px",
     borderRadius: "6px",
     border: "none",
@@ -135,7 +122,7 @@ const styles = {
     color: "#222",
   },
   input: {
-    flex: 1,
+    width: "100%",
     padding: "10px",
     borderRadius: "6px",
     border: "none",

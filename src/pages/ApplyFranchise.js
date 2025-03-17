@@ -38,33 +38,27 @@ const ApplyFranchise = () => {
       <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1 }} style={styles.card}>
         <h2 style={styles.heading}>Apply for Franchise</h2>
         <form onSubmit={handleSubmit} style={styles.form}>
-          <div style={styles.row}>
-            <select name="state" value={formData.state} onChange={handleChange} style={styles.select}>
-              <option value="">Choose State</option>
-              {states.map((state) => (
-                <option key={state} value={state}>{state}</option>
-              ))}
-            </select>
-            <select name="district" value={formData.district} onChange={handleChange} style={styles.select} disabled={!formData.state}>
-              <option value="">Choose District</option>
-              {districts.map((district) => (
-                <option key={district} value={district}>{district}</option>
-              ))}
-            </select>
-          </div>
-          <div style={styles.row}>
-            <select name="constituency" value={formData.constituency} onChange={handleChange} style={styles.select} disabled={!formData.district}>
-              <option value="">Choose Constituency</option>
-              {constituencies.map((constituency) => (
-                <option key={constituency} value={constituency}>{constituency}</option>
-              ))}
-            </select>
-            <input type="text" name="name" value={formData.name} onChange={handleChange} style={styles.input} placeholder="Full Name" required />
-          </div>
-          <div style={styles.row}>
-            <input type="tel" name="phone" value={formData.phone} onChange={handleChange} style={styles.input} placeholder="Phone Number" required />
-            <input type="tel" name="whatsapp" value={formData.whatsapp} onChange={handleChange} style={styles.input} placeholder="WhatsApp Number" required />
-          </div>
+          <select name="state" value={formData.state} onChange={handleChange} style={styles.select}>
+            <option value="">Choose State</option>
+            {states.map((state) => (
+              <option key={state} value={state}>{state}</option>
+            ))}
+          </select>
+          <select name="district" value={formData.district} onChange={handleChange} style={styles.select} disabled={!formData.state}>
+            <option value="">Choose District</option>
+            {districts.map((district) => (
+              <option key={district} value={district}>{district}</option>
+            ))}
+          </select>
+          <select name="constituency" value={formData.constituency} onChange={handleChange} style={styles.select} disabled={!formData.district}>
+            <option value="">Choose Constituency</option>
+            {constituencies.map((constituency) => (
+              <option key={constituency} value={constituency}>{constituency}</option>
+            ))}
+          </select>
+          <input type="text" name="name" value={formData.name} onChange={handleChange} style={styles.input} placeholder="Full Name" required />
+          <input type="tel" name="phone" value={formData.phone} onChange={handleChange} style={styles.input} placeholder="Phone Number" required />
+          <input type="tel" name="whatsapp" value={formData.whatsapp} onChange={handleChange} style={styles.input} placeholder="WhatsApp Number" required />
           <button type="submit" style={styles.button}>Submit</button>
         </form>
       </motion.div>
@@ -82,34 +76,29 @@ const styles = {
     padding: "20px",
   },
   card: {
-    maxWidth: "600px",
+    maxWidth: "400px",
     width: "100%",
     backdropFilter: "blur(10px)",
     background: "rgba(0, 0, 0, 0.1)",
-    padding: "30px",
+    padding: "20px",
     borderRadius: "12px",
     boxShadow: "0px 6px 15px rgba(0, 0, 0, 0.3)",
     color: "#222",
     textAlign: "center",
   },
   heading: {
-    fontSize: "24px",
+    fontSize: "20px",
     fontWeight: "bold",
-    marginBottom: "20px",
+    marginBottom: "15px",
     color: "#222",
   },
   form: {
     display: "flex",
     flexDirection: "column",
-    gap: "15px",
-  },
-  row: {
-    display: "flex",
-    justifyContent: "space-between",
     gap: "10px",
   },
   select: {
-    flex: 1,
+    width: "100%",
     padding: "10px",
     borderRadius: "6px",
     border: "none",
@@ -118,7 +107,7 @@ const styles = {
     color: "#222",
   },
   input: {
-    flex: 1,
+    width: "100%",
     padding: "10px",
     borderRadius: "6px",
     border: "none",
@@ -127,6 +116,7 @@ const styles = {
     color: "#222",
   },
   button: {
+    width: "100%",
     padding: "12px",
     borderRadius: "6px",
     border: "none",
