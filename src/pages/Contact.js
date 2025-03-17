@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { motion } from "framer-motion";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -19,12 +20,8 @@ const Contact = () => {
 
   return (
     <div style={styles.container}>
-      <div style={styles.formContainer}>
+      <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1 }} style={styles.card}>
         <h1 style={styles.heading}>Contact Us</h1>
-        <p style={styles.description}>
-          Have any questions or concerns? Feel free to reach out to us.
-        </p>
-
         <form style={styles.form} onSubmit={handleSubmit}>
           <input
             type="text"
@@ -49,45 +46,41 @@ const Contact = () => {
             placeholder="Your Message"
             value={formData.message}
             onChange={handleChange}
-            style={styles.textarea}
+            style={styles.input}
             required
           />
-          <button type="submit" style={styles.button}>
-            Send Message
-          </button>
+          <button type="submit" style={styles.button}>Send Message</button>
         </form>
-      </div>
+      </motion.div>
     </div>
   );
 };
 
-// Inline styles
 const styles = {
   container: {
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
     minHeight: "100vh",
+    background: "transparent",
+    padding: "20px",
   },
-  formContainer: {
-    maxWidth: "500px",
+  card: {
+    maxWidth: "600px",
     width: "100%",
-    background: "linear-gradient(135deg, #1E3A8A, #3B82F6)",
+    backdropFilter: "blur(10px)",
+    background: "rgba(0, 0, 0, 0.1)",
     padding: "30px",
     borderRadius: "12px",
     boxShadow: "0px 6px 15px rgba(0, 0, 0, 0.3)",
-    backdropFilter: "blur(12px)",
+    color: "#222",
     textAlign: "center",
-    color: "white",
   },
   heading: {
-    fontSize: "28px",
+    fontSize: "24px",
     fontWeight: "bold",
-    marginBottom: "10px",
-  },
-  description: {
-    fontSize: "16px",
     marginBottom: "20px",
+    color: "#222",
   },
   form: {
     display: "flex",
@@ -95,36 +88,23 @@ const styles = {
     gap: "15px",
   },
   input: {
-    width: "100%",
-    padding: "12px",
-    borderRadius: "8px",
+    flex: 1,
+    padding: "10px",
+    borderRadius: "6px",
     border: "none",
-    outline: "none",
-    fontSize: "16px",
-    color: "#333",
-  },
-  textarea: {
-    width: "100%",
-    padding: "12px",
-    height: "120px",
-    borderRadius: "8px",
-    border: "none",
-    outline: "none",
-    fontSize: "16px",
-    color: "#333",
-    resize: "none",
+    fontSize: "14px",
+    background: "rgba(255, 255, 255, 0.3)",
+    color: "#222",
   },
   button: {
-    width: "100%",
     padding: "12px",
-    background: "#ff7f50",
-    color: "white",
-    fontSize: "18px",
-    fontWeight: "bold",
+    borderRadius: "6px",
     border: "none",
-    borderRadius: "8px",
+    background: "#ff9800",
+    color: "#222",
+    fontWeight: "bold",
     cursor: "pointer",
-    transition: "0.3s",
+    fontSize: "16px",
   },
 };
 

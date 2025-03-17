@@ -1,26 +1,36 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 const About = () => {
   return (
     <div style={styles.container}>
-      <div style={styles.content}>
+      <motion.div 
+        initial={{ opacity: 0, y: 50 }} 
+        animate={{ opacity: 1, y: 0 }} 
+        transition={{ duration: 1 }} 
+        style={styles.card}
+      >
         <h1 style={styles.heading}>About Ms Reddy Associates</h1>
         <p style={styles.paragraph}>
           Welcome to <strong>Ms Reddy Associates</strong>, a trusted leader in providing exceptional 
           business services. Our company is committed to excellence, innovation, and customer 
           satisfaction. With a dedicated team of experts, we strive to deliver top-quality 
-          solutions tailored to your needs.
+          solutions tailored to your needs. Our approach ensures that businesses of all sizes can 
+          benefit from our expertise, whether they are startups or established enterprises.
         </p>
         <p style={styles.paragraph}>
           Our core values revolve around integrity, professionalism, and reliability, ensuring 
-          that every client receives the best possible service.
+          that every client receives the best possible service. We believe in fostering strong 
+          relationships with our clients, built on trust and mutual growth. 
         </p>
 
         <h2 style={styles.subheading}>Why Choose Us?</h2>
         <ul style={styles.list}>
-          <li style={styles.listItem}>✔ Expert team with years of experience</li>
-          <li style={styles.listItem}>✔ Customer-focused approach</li>
-          <li style={styles.listItem}>✔ Proven track record of success</li>
+          <li style={styles.listItem}>✔ Expert team with years of experience in multiple industries</li>
+          <li style={styles.listItem}>✔ Customer-focused approach ensuring tailored solutions</li>
+          <li style={styles.listItem}>✔ Proven track record of success with satisfied clients worldwide</li>
+          <li style={styles.listItem}>✔ Cutting-edge technology and data-driven strategies</li>
+          <li style={styles.listItem}>✔ 24/7 support and assistance for all business needs</li>
         </ul>
 
         <hr style={styles.divider} />
@@ -29,25 +39,29 @@ const About = () => {
         <p style={styles.paragraph}>
           Our franchise program offers a lucrative business opportunity for individuals looking 
           to establish a successful venture under the trusted brand of Ms Reddy Associates. 
-          We provide full support, training, and resources to help franchisees thrive.
+          We provide full support, training, and resources to help franchisees thrive. Our 
+          franchise partners benefit from our established reputation, comprehensive business 
+          model, and ongoing mentorship.
         </p>
         <p style={styles.paragraph}>
           If you're passionate about business and want to be part of a growing company, 
-          joining our franchise network is the perfect step forward.
+          joining our franchise network is the perfect step forward. We equip you with the tools, 
+          knowledge, and guidance necessary to ensure sustained profitability and success.
         </p>
 
         <h2 style={styles.subheading}>Franchise Benefits</h2>
         <ul style={styles.list}>
-          <li style={styles.listItem}>✔ Comprehensive training and support</li>
-          <li style={styles.listItem}>✔ Established brand and market presence</li>
-          <li style={styles.listItem}>✔ High-profit potential with low risk</li>
+          <li style={styles.listItem}>✔ Comprehensive training and hands-on support</li>
+          <li style={styles.listItem}>✔ Established brand recognition and credibility</li>
+          <li style={styles.listItem}>✔ High-profit potential with minimal risk</li>
+          <li style={styles.listItem}>✔ Exclusive marketing strategies and promotional materials</li>
+          <li style={styles.listItem}>✔ Ongoing mentorship and business development guidance</li>
         </ul>
-      </div>
+      </motion.div>
     </div>
   );
 };
 
-// Enhanced inline styles
 const styles = {
   container: {
     display: "flex",
@@ -56,16 +70,17 @@ const styles = {
     minHeight: "100vh",
     padding: "40px",
     textAlign: "center",
+    background: "transparent",
   },
-  content: {
+  card: {
     maxWidth: "800px",
-    background: "rgba(255, 255, 255, 0.2)",
+    backdropFilter: "blur(10px)",
+    background: "rgba(0, 0, 0, 0.1)",
     padding: "30px",
     borderRadius: "12px",
-    background: "linear-gradient(135deg, #1E3A8A, #3B82F6)",
     boxShadow: "0px 6px 15px rgba(0, 0, 0, 0.3)",
-    backdropFilter: "blur(12px)",
-    color: "white",
+    color: "#222",
+    textAlign: "center",
   },
   heading: {
     fontSize: "32px",
