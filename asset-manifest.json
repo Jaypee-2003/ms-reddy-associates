@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/ms-reddy-associates/static/css/main.e6c13ad2.css",
-    "main.js": "/ms-reddy-associates/static/js/main.d72a5b5c.js",
+    "main.js": "/ms-reddy-associates/static/js/main.cf37fdeb.js",
     "static/js/453.73a46124.chunk.js": "/ms-reddy-associates/static/js/453.73a46124.chunk.js",
     "static/media/logo.png": "/ms-reddy-associates/static/media/logo.0450d263b3a9deaf1ed0.png",
     "index.html": "/ms-reddy-associates/index.html",
     "main.e6c13ad2.css.map": "/ms-reddy-associates/static/css/main.e6c13ad2.css.map",
-    "main.d72a5b5c.js.map": "/ms-reddy-associates/static/js/main.d72a5b5c.js.map",
+    "main.cf37fdeb.js.map": "/ms-reddy-associates/static/js/main.cf37fdeb.js.map",
     "453.73a46124.chunk.js.map": "/ms-reddy-associates/static/js/453.73a46124.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e6c13ad2.css",
-    "static/js/main.d72a5b5c.js"
+    "static/js/main.cf37fdeb.js"
   ]
 }
